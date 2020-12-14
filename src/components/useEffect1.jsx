@@ -1,7 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function UseEffectExample() {
   const [resourceType, setResourceType] = useState("posts");
+
+  console.log("rendered");
+
+  // When resourceType changes.. the hook runs
+  useEffect(() => {
+    console.log("resourceType Changed");
+  }, [resourceType]);
+
+  useEffect(() => {
+    console.log("onMount");
+  }, []);
+
   return (
     <div className="container">
       <div>
