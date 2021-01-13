@@ -11,8 +11,6 @@ export default function UseEffectExample() {
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-
-    // Removes event listener when component is unmounted
     return () => {
       window.removeEventListener('resize', handleResize)
     }
